@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "next",
+    "run": "next",
+    "cms": "npx decap-server",
+    "dev": "npm-run-all --parallel cms run",
     "build": "next build",
     "start": "next start",
     "export": "npm run build"

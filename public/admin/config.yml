@@ -1,22 +1,159 @@
 backend:
   name: git-gateway
   branch: main # Branch to update (optional; defaults to master)
+local_backend:
+  # when using a custom proxy server port
+  url: http://localhost:8082/api/v1
+  # when accessing the local site from a host other than 'localhost' or '127.0.0.1'
+  allowed_hosts: ['192.168.0.1']
 media_folder: public/img
+# media_library: ## may need this??
+#   name: uploadcare
+#   config:
+#     publicKey: fa1b936f13ee0432717a
+#   settings:
+#     autoFilename: true
 public_folder: img
 collections:
-  - name: "pages"
-    label: "Pages"
+  - label: "Classes"
+    name: "class"
+    folder: "content/classes"
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "string" }
+      - {
+          label: "Registration Link",
+          name: "classRegistrationLink",
+          widget: "string",
+          required: false,
+        }
+      - { label: "Featured Image", name: "featuredImage", widget: "image" }
+      - {
+          name: startDate,
+          label: Start Date,
+          widget: datetime,
+          time_format: false,
+        }
+      - { name: endDate, label: End Date, widget: datetime, time_format: false }
+      - {
+          name: startTime,
+          label: Start Time (UTC),
+          widget: datetime,
+          date_format: false,
+          picker_utc: true,
+        }
+      - {
+          name: endTime,
+          label: End Time (UTC),
+          widget: datetime,
+          date_format: false,
+          picker_utc: true,
+        }
+      - {
+          name: singleSession,
+          label: Single Session,
+          widget: boolean,
+          required: false,
+        }
+      - label: Weekdays
+        name: weekdays
+        widget: select
+        multiple: true
+        options:
+          [
+            "Sunday",
+            "Monday",
+            "Tuesday",
+            "Wedesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+          ]
+      - { name: body, label: Body, widget: markdown }
+  - label: "Recordings"
+    name: "recording"
+    folder: "content/recordings"
+    create: true
+    editor:
+      preview: false
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - {
+          label: "YouTube video ID",
+          name: "id",
+          widget: "string",
+          hint:
+            "Input the ID only. That is the last part of the URL. For example,
+            the ID of the video at https://www.youtube.com/watch?v=gD4zcz3O7BQ is gD4zcz3O7BQ: ",
+        }
+      - { label: "Description", name: "body", widget: "markdown" }
+      - { label: Short Description, name: shortDescription, widget: string }
+  - label: "Settings"
+    name: "settings"
+    editor:
+      preview: false
     files:
-    - label: "Home"
-      name: "home"
-      file: "content/home.md"
-      fields:
-        - { label: "Title", name: "title", widget: "string"}
-        - { label: "Publish Date", name: "date", widget: "datetime" }
-        - { label: "Body", name: "body", widget: "markdown"}
-        - label: 'Cats'
-          name: "cats"
-          widget: list
-          fields:
-            - { label: "Name", name: "name", widget: "string"}
-            - { label: "Description", name: "description", widget: "text"}
+      - label: "Membership page"
+        name: "membership"
+        file: "content/_data/membership.yaml"
+        fields:
+          - label: Title
+            name: title
+            widget: string
+          - label: Banner Image
+            hint: Must be a direct link to an image file
+            name: featuredImage
+            widget: string
+          - label: Main text
+            name: body
+            widget: markdown
+      - label: "Recordings page"
+        name: "pages"
+        file: "content/_data/pages.yaml"
+        fields:
+          - label: Recordings Index Description
+            name: recordingsDescription
+            widget: text
+      - label: "Navigation"
+        name: "items"
+        file: "content/_data/navigation.yaml"
+        fields:
+          - label: Nav Items
+            name: items
+            widget: list
+            allow_add: false
+            collapsed: false
+            fields:
+              - { label: Title, name: text, widget: string }
+              - { label: URL, name: url, widget: string }
+      - label: "Contact Links"
+        name: "contacts"
+        file: "content/_data/contacts.yaml"
+        fields:
+          - label: Contact Links
+            name: contacts
+            widget: list
+            collapsed: false
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: URL, name: url, widget: string }
+      - label: "Meta Settings"
+        name: "settings"
+        file: "content/_data/settings.yaml"
+        fields:
+          - { label: Name, name: name, widget: string }
+          - { label: Byline, name: byline, widget: string }
+          - { label: URL, name: url, widget: string }
+          - { label: "Home Image", name: homeImage, widget: image }
+          - { label: "About Summary", name: aboutSummary, widget: text }
+          - { label: About Text, name: aboutText, widget: markdown }
+      - label: "Donation Settings"
+        name: donation
+        file: "content/_data/donation.yaml"
+        fields:
+          - { label: "Donation Text", name: text, widget: markdown }
+          - { label: "Donation Link Text", name: linkText, widget: string }
+          - { label: "Donation Link", name: url, widget: string }

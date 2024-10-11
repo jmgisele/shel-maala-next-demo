@@ -1,0 +1,18 @@
+---
+items:
+  - text: Home
+    url: "/"
+  - text: Membership
+    url: "/membership"
+  - text: Class Schedule
+    url: "/classes"
+  - text: Recordings
+    url: "/recordings"
+  - text: About Us
+    url: "/about"
+  - text: Contact Us
+    url: "/contact"
+  - text: Donate
+    url: "/donate"
+  - text: Shop
+    url: "https://my-store-cb4b15.creator-spring.com/"
