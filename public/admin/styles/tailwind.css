@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*Your Custom CSS Goes here*/
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply font-sans;
+}
+
+a {
+  @apply underline;
+  @apply hover:text-red;
+}
+
+p {
+  @apply my-2;
+}
+
+.video-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 56.25%;
+}
+
+.video-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+@media (min-width: 1024px) {
+  .hero {
+    height: calc(100vh - 3.2rem);
+  }
+}
+
+@responsive {
+  .max-h-override {
+    max-height: unset !important;
+  }
+  .video-thumbnail {
+    min-width:320px
+  }
+} 
