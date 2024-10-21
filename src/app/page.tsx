@@ -1,43 +1,35 @@
 import React from "react";
+import { getMdLinks, getMarkup } from "@/lib/file_utils";
+import Link from "next/link";
 
-import {
-  attributes,
-  react as HomeContent,
-} from "../../content/classes/candles-and-kashyes.md";
+interface ClassInfo {
+  slug: string;
+  classInfo: any;
+}
 
 export default function Page() {
-    let {
-        title,
-        description,
-        featuredImage,
-        startDate,
-        endDate,
-        startTime,
-        endTime,
-        singleSession,
-        weekdays,
-      } = attributes;
+ 
+  let fileNames = getMdLinks("./content/classes");
 
-    return (
-        <>
-        <h1 className="text-3xl font-bold underline">Hello world!</h1>
-        <article>
-          <h1>{title}</h1>
-          <img src={featuredImage} />
-          <header>
-            <h1>{title}</h1>
-          </header>
+  let classes: ClassInfo[] = fileNames.map((fileName) => {
+    let file = fileName + ".md";
+    return {
+      slug: fileName,
+      classInfo: getMarkup("./content/classes", file)
+    }
+  })
 
-          <h1>{title}</h1>
-          <h1>{description}</h1>
-          <h1>{startDate}</h1>
-          <h1>{endDate}</h1>
-          <h1>{startTime}</h1>
-          <h1>{endTime}</h1>
-          <h1>{singleSession}</h1>
-          <h1>{weekdays}</h1>
-          <HomeContent />
-        </article>
-      </>
-    );
-};
+  return (
+   <>
+    <h1>Here are all the classes:</h1>
+    <ul>
+      {classes.map(c => (
+          <li key={c.slug}>
+            <Link href={`/classes/${c.slug}`}>{c.classInfo.data.title}</Link>
+          </li>
+        ))
+        }
+    </ul>
+    </>
+  );
+}

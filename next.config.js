@@ -1,5 +1,15 @@
 module.exports = {
-    output: 'export',
+    // output: 'export',
+    images: {
+        remotePatterns: [
+          {
+            protocol: 'https',
+            hostname: 'i.imgur.com',
+            port: '',
+            pathname: '/**',
+          },
+        ],
+      },
     webpack: (cfg) => {
         cfg.module.rules.push(
             {
