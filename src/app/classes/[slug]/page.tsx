@@ -1,6 +1,14 @@
 
 
+import { asyncGetMdLinks } from "@/lib/file_utils";
 import MarkDown from "./getClassMd";
+
+export async function generateStaticParams() {
+  const posts: string[] = await asyncGetMdLinks("./content/classes");
+  return posts.map((post) => ({
+    slug: post,
+  }))
+}
 
 export default async function Page({
   params,

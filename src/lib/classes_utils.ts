@@ -1,23 +1,29 @@
 import { DateTime } from "luxon";
-import { v4 as uuidv4 } from "uuid";
 
-export interface ClassDateObj {
-  startDate: Date,
-  startTime: DateTime,
-  endDate: Date,
-  endTime: DateTime,
-  weekdays: any, //todo: type me better
-  singleSession: boolean,
-  featuredImage: any,
-  title: string, 
-  classDateString: string,
-  description: string,
-  page: {
-    url: string
-  }
+export interface ClassData {
+  title: string;
+  description: string;
+  classRegistrationLink: string;
+  featuredImage: string;
+  startDate: Date;
+  startTime: DateTime;
+  endDate: Date;
+  endTime: DateTime;
+  weekdays: string[];
+  singleSession?: boolean;
+  [key: string]: any
+}
+export interface ProccessedClass extends ClassData {
+  classDateString: string;
+  classTimeString: string;
+  tab: Tab;
+  slug: string;
+  file: string;
 }
 
-let classDateString = (classDataObj: ClassDateObj) => {
+export type Tab = "upcoming" | "current" | "past";
+
+export const classDateString = (classDataObj: ClassData) => {
   let startDate = DateTime.fromJSDate(classDataObj.startDate, {
     zone: "America/New_York",
   }).toLocaleString(DateTime.DATE_FULL);
@@ -56,7 +62,7 @@ let classDateString = (classDataObj: ClassDateObj) => {
   return outputString;
 };
 
-let classTimeString = (classDataObj: ClassDateObj) => {
+export const classTimeString = (classDataObj: ClassData) => {
   let startTime = DateTime.fromJSDate(classDataObj.startTime, {
     zone: "America/New_York",
   }).toLocaleString(DateTime.TIME_SIMPLE);
@@ -74,55 +80,15 @@ let classTimeString = (classDataObj: ClassDateObj) => {
   return outputString;
 };
 
-let tab = (classDataObj: ClassDateObj) => {
+export const tab = (classDataObj: ClassData): Tab => {
   let today = new Date();
   today.setUTCHours(0, 0, 0, 0);
 
-  let tab =
+  let tab: Tab =
     classDataObj.startDate > today
       ? "upcoming"
       : classDataObj.endDate >= today
       ? "current"
       : "past";
   return tab;
-};
-
-let listItem = (classDataObj: ClassDateObj) => {
-  let key = uuidv4();
-  return `
-      <li 
-        x-data="{showDescription: false}" 
-        class="p-5 bg-gray-100 border-2 border-gray-300'} lg:flex" 
-        :class="{'open': showDescription}"
-      >
-      
-      <div class="w-full lg:w-1/3">
-        <img src="${classDataObj.featuredImage}" />
-      </div>
-      <div>
-        <header>
-          <div class="flex lg:flex-grow">
-            <h3 class="font-bold flex-grow">${classDataObj.title}</h3>
-            <button 
-            class="lg:hidden"
-            @click="showDescription = !showDescription">
-            <svg x-show="!showDescription" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" stroke-width="2.5" stroke="#000000" fill="none" class="duration-300 transform transition-all" style="width: 18px; height: 18px;"><path d="M6.53 18.86l26.63 25.26 24.26-25.26"></path></svg>
-            <svg x-show="showDescription" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" stroke-width="2.5" stroke="#000000" fill="none" class="duration-300 transform transition-all" style="width: 18px; height: 18px;"><path d="M57.47 45.15L30.84 19.88 6.58 45.15"></path></svg>
-            </button>
-          </div>
-        </header>
-        <div class="p-1 bg-gray-200 my-1">
-          <time class="text-sm">${classDataObj.classDateString}</time>
-        </div>
-        <div class="overflow-hidden transition-all duration-700 lg:max-h-override"
-          x-ref="${key}" :style="
-          showDescription ? 'max-height: ' + $refs['${key}'].scrollHeight + 'px' : 'max-height: 0'
-
-        ">
-          <p>${classDataObj.description}</p>
-          <p class="text-right"><a href="${classDataObj.page.url}">More Info</a></p>
-        </div>
-      </div>
-      </li>
-      `;
 };

@@ -8,6 +8,7 @@
     "dev": "npm-run-all --parallel cms run",
     "build": "next build",
     "start": "next start",
+    "start-2": "node .next/standalone/server.js",
     "export": "npm run build"
   },
   "keywords": [],
@@ -16,7 +17,9 @@
   "description": "",
   "dependencies": {
     "@types/js-yaml": "^4.0.9",
+    "clsx": "^2.1.1",
     "gray-matter": "^4.0.3",
+    "js-yaml": "^4.1.0",
     "next": "^14.2.15",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"

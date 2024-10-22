@@ -1,4 +1,3 @@
-import { ClassDateObj } from "@/lib/classes_utils";
 import { getMarkup } from "@/lib/file_utils";
 import Image from "next/image";
 
