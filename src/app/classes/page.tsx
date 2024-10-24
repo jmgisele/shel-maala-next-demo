@@ -1,8 +1,7 @@
 import React from "react";
-import { getMdFileNames, getMarkup, getClassFileData } from "@/lib/file_utils";
-import Link from "next/link";
+import { getMdFileNames, getClassFileData } from "@/lib/file_utils";
 import { Metadata } from "next";
-import { ClassData, FullClassInfo, ParsedClass } from "@/lib/classes_utils";
+import { ClassData, FullClassInfo } from "@/lib/classes_utils";
 import Navbar from "@/ui/navbar";
 import ClassItem from "@/ui/classItem";
 

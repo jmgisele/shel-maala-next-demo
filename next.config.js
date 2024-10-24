@@ -21,5 +21,4 @@ module.exports = {
         )
         return cfg
     },
-    transpilePackages: ["next-mdx-remote"]
 }

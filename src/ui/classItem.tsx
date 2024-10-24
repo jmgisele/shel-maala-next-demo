@@ -5,7 +5,7 @@ import clsx from "clsx";
 import { ClassData, ParsedClass } from "@/lib/classes_utils";
 
 interface ClassItemProps {
-  parsedClassData: ParsedClass; //type me
+  parsedClassData: ParsedClass;
 }
 
 export default function ClassItem({ parsedClassData }: ClassItemProps) {

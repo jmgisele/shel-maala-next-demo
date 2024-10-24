@@ -3,7 +3,6 @@ import fs from "fs";
 import yaml from "js-yaml";
 import path from "path";
 import matter from "gray-matter";
-import { readdir } from "node:fs/promises";
 import { remark } from "remark";
 import html from "remark-html";
 import { ClassDataDef, ParsedClass } from "./classes_utils";
@@ -54,20 +53,6 @@ export async function getRecordingFileData(
   };
 }
 
-export const getMarkup = ( // todo: i shouldn't be needed
-  directory: string,
-  filename: string
-): matter.GrayMatterFile<string> | null => {
-  /* Converts specific file to a gray-matter object */
-  try {
-    const file = matter.read(path.join(process.cwd(), directory, filename));
-    return file;
-  } catch (error) {
-    console.error(error);
-    return null;
-  }
-};
-
 export const getYAML = (directory: string, filename: string): unknown => {
   try {
     let flName = path.join(process.cwd(), directory, filename);
@@ -90,6 +75,11 @@ export const getMdFileNames = (directory: string): string[] => {
     return [];
   }
 };
+
+
+// GRAVEYARD OF CURRENTLY UNNEEDED FILE UTILS BELOW
+
+// ~~~~ ooo spooky ~~~
 
 // export const asyncGetMdLinks = async (directory: string): Promise<string[]> => {
 //   try {
@@ -135,3 +125,16 @@ export const getMdFileNames = (directory: string): string[] => {
 //   }
 // };
 
+// export const getMarkup = ( // todo: i shouldn't be needed
+//   directory: string,
+//   filename: string
+// ): matter.GrayMatterFile<string> | null => {
+//   /* Converts specific file to a gray-matter object */
+//   try {
+//     const file = matter.read(path.join(process.cwd(), directory, filename));
+//     return file;
+//   } catch (error) {
+//     console.error(error);
+//     return null;
+//   }
+// };
