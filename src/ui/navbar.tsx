@@ -7,6 +7,7 @@ import { NavbarProps } from "src/models/navbar";
 export default function Navbar({ navigation }: NavbarProps) {
   let [showNavMenu, setShowNavMenu] = useState(false);
 
+  //todo: make me sticky!!
   const toggleNav = () => {
     // todo: make my animation work again
     setShowNavMenu(!showNavMenu);

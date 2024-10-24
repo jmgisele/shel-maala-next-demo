@@ -1,6 +1,5 @@
 import React from "react";
 import Script from "next/script";
-import Head from "next/head";
 import type { Metadata } from "next";
 import { getYAML } from "@/lib/file_utils";
 import { Settings } from "src/models/settings";
@@ -32,26 +31,12 @@ export default async function RootLayout({
 }) {
   return (
     <html lang="en">
-      <Head>
-        <Script rel="preconnect" src="https://fonts.googleapis.com" />
-        <Script
-          rel="preconnect"
-          src="https://fonts.gstatic.com"
-          crossOrigin=""
-        />
-        <Script
-          src="https://fonts.googleapis.com/css2?family=Bellefair&family=Lato&display=swap"
-          rel="stylesheet"
-        />
-        <Script src="https://identity.netlify.com/v1/netlify-identity-widget.js" />
-      </Head>
+      <Script src="https://identity.netlify.com/v1/netlify-identity-widget.js" />
       <body
         className={`${lato.variable} ${bellefair.variable} relative bg-eggshell lg:text-xl min-h-screen flex-col flex`}
       >
-        {/* <div className={}> */}
         {children}
         {/*  TODO: FOOTER GOES HERE */}
-        {/* </div> */}
       </body>
     </html>
   );

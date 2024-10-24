@@ -36,7 +36,7 @@ html,
   -moz-tab-size: 4; /* 3 */
   -o-tab-size: 4;
      tab-size: 4; /* 3 */
-  font-family: Lato, sans-serif; /* 4 */
+  font-family: var(--font-lato), sans-serif; /* 4 */
   font-feature-settings: normal; /* 5 */
   font-variation-settings: normal; /* 6 */
   -webkit-tap-highlight-color: transparent; /* 7 */
@@ -953,7 +953,7 @@ video {
 }
 .prose :where(h1, h2, h3, h4, h5, h6):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
   font-weight: unset;
-  font-family: Bellefair, serif;
+  font-family: var(--font-bellefair), serif;
 }
 .static {
   position: static;
@@ -1159,8 +1159,7 @@ video {
   text-align: right;
 }
 .font-serif {
-  /* font-family: Bellefair, serif; */
-  /* font-family: var(--font-lato); */
+  font-family: var(--font-bellefair), serif;
 }
 .text-2xl {
   font-size: 1.5rem;
@@ -1251,7 +1250,7 @@ html {
 }
 
 body {
-  font-family: Lato, sans-serif;
+  font-family: var(--font-lato), sans-serif;
 }
 
 a {
