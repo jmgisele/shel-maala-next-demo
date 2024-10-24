@@ -13,7 +13,7 @@ weekdays:
   - Saturday
   - Sunday
 ---
-<!--StartFragment-->
+
 
 Shel Maala, your favorite online queer Yeshiva, is coming DOWN FROM THE CLOUD just outside of \*LONDON ENGLAND\*, at Sadeh Farm in Orpington, Kent, to offer a weekend of Shabbes, Seudahs (feasts) and shtark Talmud learning in Europe for our first time ever.
 
@@ -107,4 +107,3 @@ Note: Shel Maala membership discounts (https://bit.ly/shelmaalajoin) unfortunate
 
 If you have any questions please email: shelmaalayeshiva@gmail.com
 
-<!--EndFragment-->

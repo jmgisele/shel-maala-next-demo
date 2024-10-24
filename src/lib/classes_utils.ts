@@ -13,6 +13,7 @@ export interface ClassData {
   singleSession?: boolean;
   [key: string]: any
 }
+
 export interface ProccessedClass extends ClassData {
   classDateString: string;
   classTimeString: string;
@@ -92,3 +93,4 @@ export const tab = (classDataObj: ClassData): Tab => {
       : "past";
   return tab;
 };
+

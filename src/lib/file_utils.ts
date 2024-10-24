@@ -37,6 +37,21 @@ export const getMarkup = (
   }
 };
 
+export const getFile = (
+  directory: string,
+  filename: string
+): string | null => {
+  /* Converts specific file to a gray-matter object */
+  try {
+    const file = fs.readFileSync(path.join(process.cwd(), directory, filename), 'utf8');
+
+    return file;
+  } catch (error) {
+    console.error(error);
+    return null;
+  }
+};
+
 export const getYAML = (
   directory: string,
   filename: string

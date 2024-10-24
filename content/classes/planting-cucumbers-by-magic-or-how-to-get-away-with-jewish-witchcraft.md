@@ -11,7 +11,7 @@ endTime: 2022-04-01T22:00:22.593Z
 weekdays:
   - Sunday
 ---
-<!--StartFragment-->
+
 
 🎵You have to believe we are magic, Nothing' can stand in our way🎵
 
@@ -51,4 +51,3 @@ There will be a break in between optional guided xevruta time + class.
 
 There will be a break in the middle of class as well
 
-<!--EndFragment-->

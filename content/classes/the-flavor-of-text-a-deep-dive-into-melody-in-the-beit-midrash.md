@@ -11,7 +11,7 @@ endTime: 2023-06-18T20:00:54.628Z
 weekdays:
   - Sunday
 ---
-<!--StartFragment-->
+
 
 The beit midrash can be a noisy place. Students arguing, pages rustling, teachers expounding up at their lectern. And the incessant singing—yes, singing! From the lilts of Talmudic intonations, to the trop used to chant the holy Torah, why did our transcestors demand that we sing when we learn, and learn when we sing? In this class, Robin Banerji, a homegrown Shel Maala superstar, will help us dive deep into a halaxa (jewish law) from the fabulous Masechet Megillah, and enrich our learning with commentaries. Plus, we’ll revel in a juicy midrash with whining Torahs, shwasty Torah scholars, and the sexiest book of the Tanakh. Along the way, we’ll sing, dance, chant, laugh, love, and pray.
 
@@ -69,4 +69,3 @@ and reach out to us at the email above, if you have any further questions
 
 
 
-<!--EndFragment-->

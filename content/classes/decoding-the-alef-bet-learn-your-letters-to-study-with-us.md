@@ -11,7 +11,7 @@ endTime: 2024-07-23T19:30:27.374Z
 weekdays:
   - Sunday
 ---
-<!--StartFragment-->
+
 
 Do you want to learn to read and write in Hebrew? Is it because you just want to understand what the shapes of the letters mean? Or do you have a bigger goal in mind? Together we can take that first step either for its own sake, or so that you can start learning how to chant Torah, understand the siddur, or even study Talmud (with us!). If you’re a beginner or just wanting to refresh your skills, this is the class for you!
 
@@ -51,4 +51,3 @@ This class is $36/class ($144 total), NOTAFLOF. Full sliding scale will be shown
 
 If you have any questions please email: shelmaalayeshiva@gmail.com
 
-<!--EndFragment-->

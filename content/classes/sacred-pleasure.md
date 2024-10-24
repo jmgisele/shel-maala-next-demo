@@ -12,8 +12,7 @@ singleSession: true
 weekdays:
   - Sunday
 ---
-<!--StartFragment-->
+
 
 Binya and I are leading another shiur (talmudic discussion) for our beit midrash! This one is called Sacred Pleasure. It's from masexet Avodah Zara, and includes themes of the goddess, queens, the erotic, licentiousness and trans femininity. Content warning that it will contain explicit discussions of sex. The event will be live captioned and include an opportunity to donate to an organization leading the fight for Black lives. We hope this Jewish learning space will be an opportunity to connect, replenish yourself and fuel your fight for justice.
 
-<!--EndFragment-->

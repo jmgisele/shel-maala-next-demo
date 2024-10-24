@@ -11,7 +11,7 @@ endTime: 2023-11-15T02:30:57.516Z
 weekdays:
   - Wedesday
 ---
-<!--StartFragment-->
+
 
 Do you ever look at the sky and think about God? The folks who brought us the Zohar sure did. Get ready to lift yourself up to the place where all eyes gaze - and make sure to bring every question you’ve ever thought! Cuz we’re taking a trip to the mysterious Ancient One whose “Ask Me Anything” booth sits at the end of heaven itself.
 
@@ -67,4 +67,3 @@ N﻿OTE: For this class, there is an option to audit. This would mean that you w
 
 Reach out to us at the email above, if you have any further questions
 
-<!--EndFragment-->

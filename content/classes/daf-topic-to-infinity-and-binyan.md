@@ -12,7 +12,7 @@ singleSession: true
 weekdays:
   - Sunday
 ---
-<!--StartFragment-->
+
 
 Are you wondering how to take a Hebrew or Aramaic root and turn it back into a word? Have you wondered what all those funny abbreviations in Jastrow mean? Heard of binyans, but don't really know how to work with them? Want to learn how to tell a piel from a pual? This is the class for you! Come learn how these fascinating verb structures can help us in our quest to swim in the sea of Talmud and make sense of all those roots. This class will be captioned. If you wish to make a donation to support this learning, you can do so via Binya's Venmo, @bkoatz.
 
@@ -21,4 +21,3 @@ To register, fill out the form at this link:\
 
 This event will also be streamed by Jewish LIVE at [https://www.jewishlive.org/shel-maala](https://www.jewishlive.org/shel-maala?fbclid=IwAR0tNVZifFhkf8E1WMvSaGTvRb1c9LSTRBaU9_L80eQCUAiAwsM2jrqD568) 
 
-<!--EndFragment-->

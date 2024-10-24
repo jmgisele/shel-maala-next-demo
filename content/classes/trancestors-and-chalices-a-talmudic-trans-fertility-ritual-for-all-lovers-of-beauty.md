@@ -14,7 +14,7 @@ singleSession: true
 weekdays:
   - Monday
 ---
-<!--StartFragment-->
+
 
 Join UK-based Kohanot at Yelala & US-based queer yeshiva, Shel Maala in an interactive exploration of a trans feminine fertility ritual in the Talmud
 
@@ -26,4 +26,3 @@ Taught by Rosh Yeshivas Binya and Xava, and hosted by Kohenet Rachel Rose Reid, 
 
 Together, we’ll make a *Yohananya Chalice*, a ritual embodying trans fertility, the divine feminine, and so much more, and uncover the brilliance of this ancient text
 
-<!--EndFragment-->

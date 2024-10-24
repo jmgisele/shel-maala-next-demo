@@ -11,7 +11,7 @@ endTime: 2023-09-08T01:30:03.332Z
 weekdays:
   - Thursday
 ---
-<!--StartFragment-->
+
 
 In March of 5783, the Trans Halakha Project released two groundbreaking projects: a series of Trans Teshuvot (Jewish legal responses), answering core questions of Jewish law for and about trans people; and Tefillat Trans, a book of blessings and rituals written by and for trans people.
 
@@ -71,4 +71,3 @@ Each shiur will be “fairied” (TA’d) by a member of the THP or Shel Maala
 
 
 
-<!--EndFragment-->

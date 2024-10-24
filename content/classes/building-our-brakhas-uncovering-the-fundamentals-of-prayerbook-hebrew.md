@@ -11,7 +11,6 @@ endTime: 2024-02-12T02:30:00.000Z
 weekdays:
   - Wedesday
 ---
-<!--StartFragment-->
 
 “When I pray, I know Hashem understands me - but I wanna understand myself”
 
@@ -59,4 +58,3 @@ This class is $36/class ($108 total), NOTAFLOF. Full sliding scale will be shown
 
 If you have any questions please email: shelmaalayeshiva@gmail.com
 
-<!--EndFragment-->

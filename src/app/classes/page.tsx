@@ -28,12 +28,7 @@ export default function Page() {
   })
 
   return (
-   <>
-   <Head>    
-        {/* todo: make me dynamic, put me in metadata */}
-    <meta property="og:title" content="Classes" />
-    <meta property="title" content="Classes" />
-   </Head>
+   <main>
     <h1>Here are all the classes:</h1>
     <ul>
       {classes.map(c => (
@@ -43,6 +38,6 @@ export default function Page() {
         ))
         }
     </ul>
-    </>
+    </main>
   );
 }

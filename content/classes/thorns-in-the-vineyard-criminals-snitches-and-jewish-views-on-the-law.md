@@ -11,7 +11,7 @@ endTime: 2024-04-17T20:00:16.293Z
 weekdays:
   - Sunday
 ---
-<!--StartFragment-->
+
 
 Are Jews allowed to talk to cops? Is halaxa more “thin blue line” or “ACAB”? What happens at the intersection between intra-communal Jewish law and enforcement, and the secular/goyish carceral state? Dive into these questions, as alive now as they’ve ever been, as we ground ourselves in a two-thousand year old Rabbinic tale to figure out whether pigs are kosher or treyf when it comes to the police.
 
@@ -67,4 +67,3 @@ N﻿OTE: For this class, there is an option to audit. This would mean that you w
 
 Reach out to us at the email above, if you have any further questions
 
-<!--EndFragment-->

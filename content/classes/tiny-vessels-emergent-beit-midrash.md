@@ -12,8 +12,7 @@ singleSession: true
 weekdays:
   - Sunday
 ---
-<!--StartFragment-->
+
 
 Studying Talmud is a practice that helps me hone the skill of reinterpreting the past and energizes me to work for a future of liberation for all. So of course I want to study during pandemic! No Hebrew knowledge required. Come learn a very mysterious sugye (section of Talmud) about tiny vessels, and about how the rabbis thought we should relate to our possessions.
 
-<!--EndFragment-->

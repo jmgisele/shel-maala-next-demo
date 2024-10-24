@@ -11,7 +11,7 @@ endTime: 2023-05-04T20:00:18.238Z
 weekdays:
   - Sunday
 ---
-<!--StartFragment-->
+
 
 The letters of the alef-bet aren’t just scratches on parchment. They have their own personalities. They speak with G-d, rule over nature and emotion, and reveal hidden Torah.
 
@@ -67,4 +67,3 @@ N﻿OTE: For this class, there is an option to audit. This would mean that you w
 
 https://forms.gle/CTUK5W2nF9hw2xi99
 
-<!--EndFragment-->

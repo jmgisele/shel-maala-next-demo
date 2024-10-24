@@ -13,7 +13,7 @@ weekdays:
   - Saturday
   - Sunday
 ---
-<!--StartFragment-->
+
 
 Shel Maala, your favorite online queer Yeshiva, is coming DOWN FROM THE CLOUD in Northampton, Western Mass, to offer a weekend of Shabbes, Oneg and shtark Talmud learning in New England for our first time ever.
 
@@ -127,4 +127,3 @@ If you have any questions please email: shelmaalayeshiva@gmail.com
 
 In collaboration with B'yameinu Yeshiva and Pushcart Judaica
 
-<!--EndFragment-->

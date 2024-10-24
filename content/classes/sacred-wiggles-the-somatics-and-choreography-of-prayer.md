@@ -12,7 +12,7 @@ endTime: 2024-02-12T21:00:00.000Z
 weekdays:
   - Sunday
 ---
-<!--StartFragment-->
+
 
 As we pray, we shiver and shake. We bend, rock, stiffen, and fall. We step and wobble. The Jewish tradition sanctifies all these wiggles as holy. A prayer is not mere words, but a multimedia sensory experience, a fabulous musical theater number complete with music, lyrics, and choreography. As sung by biblical twink David Hamelech, “All my bones say to you, God, who is like you!” In this four week class (plus a bonus co-learning happy hour!) we will mine the wisdom of the sages past and present, to learn what these wiggles mean to them, and rock the beit midrash til we have the Torah singing a new queer song.
 
@@ -60,4 +60,3 @@ This class is $36/class ($144 total), NOTAFLOF. Full sliding scale will be shown
 If you have any questions please email: shelmaalayeshiva@gmail.com
 
 \
-<!--EndFragment-->

@@ -12,7 +12,7 @@ singleSession: true
 weekdays:
   - Wedesday
 ---
-<!--StartFragment-->
+
 
 Eli Ramer, acclaimed author of such seminal queer Jewish literature as *Fragments of the Brooklyn Talmud* and *Queering the Text*, is joining Shel Maala for a special, one-night-only class on midrash, the sacred Jewish art of story telling.
 
@@ -58,4 +58,3 @@ This class is $36, NOTAFLOF. Full sliding scale will be shown at checkout.
 
 If you have any questions please email: shelmaalayeshiva@gmail.com
 
-<!--EndFragment-->

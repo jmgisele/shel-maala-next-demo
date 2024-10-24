@@ -11,7 +11,7 @@ weekdays:
   - Wedesday
   - Sunday
 ---
-<!--StartFragment-->
+
 
 This Winter/Spring, Shel Maala is inviting you to Deepen Your Davvening, with two amazing classes focused on the text and movement of Jewish Prayer. 
 
@@ -27,4 +27,3 @@ Jewish prayer isn’t just words. It’s a multimedia sensory experience. Come l
 
 Come to one or both of these classes, and deepen your davvening with us!
 
-<!--EndFragment-->

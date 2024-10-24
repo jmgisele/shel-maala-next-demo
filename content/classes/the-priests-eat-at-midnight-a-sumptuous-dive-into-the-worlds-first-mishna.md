@@ -11,7 +11,7 @@ endTime: 2023-12-20T21:00:33.543Z
 weekdays:
   - Sunday
 ---
-<!--StartFragment-->
+
 
 Our ancestors knew what they were doing. When the Rabbis compiled the Mishna, they weren’t just writing a book - they were creating a vehicle for diasporic survival and cultural transmission across all space and time. They were honing Judaism down to its DNA, putting it in a seed, and letting it loose in the wind. The teaching they chose to start this compendium, the first Mishna of Brachot (“blessings”) is an archetype of the work as a whole, and contains the radical drops that presage the revolutionary ocean to come.
 
@@ -67,4 +67,3 @@ NOTE: For this class, there is an option to audit. This would mean that you woul
 
 Reach out to us at the email above, if you have any further questions
 
-<!--EndFragment-->

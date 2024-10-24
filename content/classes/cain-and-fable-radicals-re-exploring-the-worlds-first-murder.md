@@ -10,7 +10,7 @@ endTime: 2022-06-16T21:00:24.033Z
 weekdays:
   - Sunday
 ---
-<!--StartFragment-->
+
 
 Cain and Abel. The story is classically instructive, and straightforwardly simple - Bad Cain and Good Abel, two brothers, bring sacrifices to Hashem. Hashem likes Good Abel’s sacrifice, but not Bad Cain’s. Bad Cain gets jealous, and (spoiler alert!) strikes down Good Abel. Hashem freaks out, casting Bad Cain out to wander the rest of his Bad Bad days.
 
@@ -26,4 +26,4 @@ Join Shel Maala - your digital-first queer Yeshiva - in our first deep-dive into
 
 Let’s raise some cane as we wrestle with Cain, and see what this story from the dawn of history has to teach us weirdos & queerdos today.
 
-<!--EndFragment-->
+

@@ -12,8 +12,6 @@ singleSession: true
 weekdays:
   - Sunday
 ---
-<!--StartFragment-->
 
 What does the Talmud say about how to fix a situation in which you've already benefited from stolen goods? How does this intersect with teachings of contemporary Black and Indigenous teachers about reparations, decolonization and anti-Blackness? Come help us find out! 
 
-<!--EndFragment-->

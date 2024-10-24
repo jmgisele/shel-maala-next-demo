@@ -11,7 +11,7 @@ endTime: 2023-07-17T01:30:04.395Z
 weekdays:
   - Wedesday
 ---
-<!--StartFragment-->
+
 
 Suit Up and Fruit Up you nerdy gemara-babes, and get ready for Frootcamp - your chance to upscale your practical gay Talmud skills before the New Year starts. Over the course of three long summer evenings, we’ll be diving into different Talmudic topics that’ll make you a better learner, a braver explorer of the daf, and hopefully a more confident shaper of the gay jewish world that’s bubbling out from under our feet
 
@@ -73,4 +73,3 @@ I﻿f you have any questions please email: shelmaalayeshiva@gmail.com
 
 N﻿OTE: There is no audit option for these shiurim, since there is no xevruta learning. Signing up via eventbrite is equivalent and sufficient.
 
-<!--EndFragment-->

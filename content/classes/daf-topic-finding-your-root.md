@@ -11,7 +11,7 @@ singleSession: true
 weekdays:
   - Sunday
 ---
-<!--StartFragment-->
+
 
 Did you know that the Talmud is our gay ancestral playground?\
 And did you know that YOU (yes you!) have what it takes to come play?!?
@@ -25,4 +25,3 @@ Then this is the class for you! Join transgirl talmud teachers Binya Kóatz and 
 
 
 
-<!--EndFragment-->

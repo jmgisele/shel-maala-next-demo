@@ -14,7 +14,7 @@ singleSession: true
 weekdays:
   - Thursday
 ---
-<!--StartFragment-->
+
 
 If the devil is in the details, then get ready to go to hell!
 
@@ -48,4 +48,4 @@ February 24th, 8-9:30 PM Eastern || 5-6:30 Pacific, Jastrow: The Dictionary, The
 
 These classes will be live captioned and recorded, and slides will be made available beforehand to those that register. Please reach out with any other access needs you might have. 
 
-<!--EndFragment-->
+

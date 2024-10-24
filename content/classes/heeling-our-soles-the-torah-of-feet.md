@@ -12,7 +12,7 @@ singleSession: true
 weekdays:
   - Thursday
 ---
-<!--StartFragment-->
+
 
 In a famous story in the Talmud, Hillel the Elder gets challenged to teach a convert the entire Torah “on one foot.” Though that passage gets quoted often, people mostly miss its main character - *feet!**
 
@@ -58,4 +58,3 @@ This class is $36, NOTAFLOF. Full sliding scale will be shown at checkout.
 
 I f you have any questions please email: shelmaalayeshiva@gmail.com
 
-<!--EndFragment-->
