@@ -1,7 +1,7 @@
 import React from "react";
 import { Metadata } from "next";
 import { Settings } from "src/models/settings";
-import { getYAML } from "@/lib/file_utils";
+import { getstrToMd, getYAML } from "@/lib/file_utils";
 import Navbar from "@/ui/navbar";
 
 export const metadata: Metadata = {
@@ -11,13 +11,12 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Page() {
+export default async function Page() {
   let settings = getYAML(
     "./content/_data/",
     "settings.yaml"
   ) as unknown as Settings;
-
-  // todo: parse me as MD correctly!!
+  const contentHtml = await getstrToMd(settings.aboutText);
 
   return (
     <>
@@ -26,7 +25,8 @@ export default function Page() {
         <header className="border-b-2 border-red">
           <h1>{"About Us"}</h1>
         </header>
-        {settings.aboutText}
+        {/* TODO: sanitize me! */}
+        <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
       </main>
     </>
   );

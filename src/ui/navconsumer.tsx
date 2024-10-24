@@ -2,7 +2,11 @@
 
 import { OutsideAlerter } from "@/lib/ui_utils";
 import { useState } from "react";
-import { NavbarProps } from "src/models/navbar";
+interface NavbarProps {
+  navigation: {
+      items: { text: string; url: string; [key: string]: any }[];
+  }
+}
 
 export default function NavConsumer({ navigation }: NavbarProps) {
   let [showNavMenu, setShowNavMenu] = useState(false);

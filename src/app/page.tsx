@@ -1,41 +1,41 @@
 import React from "react";
-import { getMdLinks, getMarkup, getYAML } from "@/lib/file_utils";
+import {
+  getMdFileNames,
+  getMarkup,
+  getYAML,
+  getPostData,
+  getstrToMd,
+} from "@/lib/file_utils";
 import Link from "next/link";
 import ClassItem from "@/ui/classItem";
-import {
-  ClassData,
-  classDateString,
-  classTimeString,
-  ProccessedClass,
-  tab,
-} from "@/lib/classes_utils";
+import { ClassData, FullClassInfo } from "@/lib/classes_utils";
 import Navbar from "@/ui/navbar";
 import { Settings } from "src/models/settings";
+import { Contacts } from "src/models/contact";
+import { Membership } from "src/models/membership";
+import { Donation } from "src/models/donation";
 
-export default function Page() {
-  let fileNames = getMdLinks("./content/classes");
+export default async function Page() {
+  let fileNames = getMdFileNames("./content/classes");
 
-  let classes: ProccessedClass[] = fileNames.map((fileName) => {
-    let file = fileName + ".md";
+  let classes: FullClassInfo[] = await Promise.all(
+    fileNames.map(async (fileName) => {
+      let post = await getPostData("./content/classes", fileName);
+      return { parsed: post, data: new ClassData(post) };
+    })
+  );
 
-    let data = getMarkup("./content/classes", file)
-      .data as unknown as ClassData;
+  // todo: sanitize me !
+  // todo: pull dirs out into an env variable?? cross application
+  let settingsData = getYAML("./content/_data/", "settings.yaml") as Settings;
 
-    let classInfo: ProccessedClass = {
-      ...data,
-      classDateString: classDateString(data),
-      classTimeString: classTimeString(data),
-      tab: tab(data),
-      slug: "/classes/" + fileName,
-      file: file,
-    };
-    return classInfo;
-  });
+  let contacts = getYAML("./content/_data/", "contacts.yaml") as Contacts;
 
-  let settingsData = getYAML(
-    "./content/_data/",
-    "settings.yaml"
-  ) as unknown as Settings;
+  let membership = getYAML("./content/_data/", "membership.yaml") as Membership;
+
+  let donation = getYAML("./content/_data/", "donation.yaml") as Donation;
+
+  let donationMD = await getstrToMd(donation.text);
 
   return (
     <>
@@ -72,15 +72,19 @@ export default function Page() {
           </h2>
           <ul className="flex flex-col">
             {classes
-              .filter((c) => ["current", "upcoming"].includes(c.tab))
-              .sort((a, b) => a.startDate.getTime() - b.startDate.getTime())
+              .filter((c) => ["current", "upcoming"].includes(c.data.tab()))
+              .sort(
+                (a, b) =>
+                  new Date(b.data.startDate).getTime() -
+                  new Date(a.data.startDate).getTime()
+              )
               .slice(0, 2)
               .map((c, index) => (
                 <React.Fragment key={index}>
                   <li key={index}>
-                    <Link href={`/classes/${c.slug}`}>{c.title}</Link>
+                    <Link href={`/classes/${c.data.slug}`}>{c.data.title}</Link>
                   </li>
-                  <ClassItem classDataJson={c} />
+                  <ClassItem parsedClassData={c.parsed} />
                 </React.Fragment>
               ))}
           </ul>
@@ -104,13 +108,13 @@ export default function Page() {
                 Contact Us
               </h2>
               <ul className="flex-grow list-disc ml-8">
-                {/* {% for link in contacts.contacts %}
-          <li>
-            <a className="font-serif contact-link" href="{{ link.url }}"
-              >{{link.title}}</a
-            >
-          </li>
-          {% endfor %} */}
+                {contacts.contacts.map((link, index) => (
+                  <li key={index}>
+                    <a className="font-serif contact-link" href={link.url}>
+                      {link.title}
+                    </a>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
@@ -119,18 +123,19 @@ export default function Page() {
           <h2 className="w-full font-serif mb-2 text-left text-2xl lg:text-4xl">
             Membership
           </h2>
-          {/* {{ membership.text | markdownIt | safe }} */}
           <p className="font-serif text-xl lg:text-2xl">
-            {/* <a href="{{ membership.url}}">{{ membership.linkText }}</a> */}
+            <a href={membership.url}>{membership.linkText}</a>
           </p>
         </section>
         <section className="p-2 mt-4 lg:pt-6 lg:mt-4">
           <h2 className="w-full font-serif mb-2 text-left text-2xl lg:text-4xl">
             Donate
           </h2>
-          {/* {{ donation.text | markdownIt | safe }} */}
+          {/* TODO: MAKE SURE I GET SANITIZED FIRST */}
+          {/* TODO: links within me should be in serif not sans serif */}
+          <div dangerouslySetInnerHTML={{ __html: donationMD }} />
           <p className="font-serif text-xl lg:text-2xl">
-            {/* <a href="{{ donation.url}}">{{ donation.linkText }}</a> */}
+            <a href={donation.url}>{donation.linkText}</a>
           </p>
         </section>
       </main>

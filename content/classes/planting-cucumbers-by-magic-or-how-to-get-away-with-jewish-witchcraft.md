@@ -19,7 +19,7 @@ Despite fierce prohibitions in Deuteronomy, the Talmud is full of Rabbis doing m
 
 \~\~~
 
-This will be a XEVRUTA-STYLE talmud class! Xevruta means "friend" or "study-partner", and this means that you'll move through this class with a study-buddy \<3 You can come with a paired xevruta, or we will pair you with one :)
+This will be a XEVRUTA-STYLE talmud class! Xevruta means "friend" or "study-partner", and this means that you'll move through this class with a study-buddy <3 You can come with a paired xevruta, or we will pair you with one :)
 
 Each class (including the first) will require about 1 hour of Xevruta prep beforehand! You can get that xevruta prep done in one of two ways:
 

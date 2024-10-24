@@ -1,11 +1,12 @@
 import { getYAML } from "@/lib/file_utils";
 import NavConsumer from "./navconsumer";
+import { Navigation } from "src/models/navigation";
 
 export default async function Navbar() {
     let navData = getYAML(
         "./content/_data/",
         "navigation.yaml"
-      ) as unknown as any; // todo: type me
+      ) as Navigation;
 
     return (
         <NavConsumer navigation={navData}/>

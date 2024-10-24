@@ -1,16 +1,12 @@
 import {
   ClassData,
-  classDateString,
-  classTimeString,
-  ProccessedClass,
-  tab,
+  ParsedClass,
 } from "@/lib/classes_utils";
-import { asyncGetMdLinks, getFile } from "@/lib/file_utils";
+import { getMdFileNames, getPostData } from "@/lib/file_utils";
 import Navbar from "@/ui/navbar";
-import { compileMDX } from "next-mdx-remote/rsc";
 
-export async function generateStaticParams() {
-  const posts: string[] = await asyncGetMdLinks("./content/classes");
+export function generateStaticParams() {
+  const posts: string[] = getMdFileNames("./content/classes");
   return posts.map((post) => ({
     slug: post,
   }));
@@ -22,27 +18,10 @@ export default async function Page({
   params: Promise<{ slug: string }>;
 }) {
   const slug = (await params).slug;
-  let filename = slug + ".md";
 
-  const c = getFile("/content/classes", filename);
+  const postData: ParsedClass = await getPostData("./content/classes", slug);
 
-  // todo: make me safe!! i should not be allowed to execute code, sanitize me somehow
-  // todo: i may not need this library??? may be simpler way using native jsx functionality
-  // todo: i can't parse links without a [](). either fix that or make sure ppl know that
-  // also < and > as in <3 lol
-  const { content, frontmatter } = await compileMDX<ClassData>({
-    source: c,
-    options: { parseFrontmatter: true },
-  });
-
-  let processedClass: ProccessedClass = {
-    ...frontmatter,
-    classDateString: classDateString(frontmatter),
-    classTimeString: classTimeString(frontmatter), // todo: i shouldn't consume the full file ?? this is not sensible
-    tab: tab(frontmatter),
-    slug: "/classes/" + slug,
-    file: filename,
-  };
+  let processedClass = new ClassData(postData);
 
   return (
     <>
@@ -56,19 +35,20 @@ export default async function Page({
         </header>
         <div className="flex flex-col lg:flex-row justify-between">
           {processedClass.classRegistrationLink &&
-            processedClass.tab != "past" && (
+            processedClass.tab() != "past" && (
               <div className="text-sm text-red border-black lg:pr-1 lg:border-r lg:mr-1">
                 <a href={processedClass.classRegistrationLink}>Register</a>
               </div>
             )}
           <time className="text-sm flex-grow block">
-            {processedClass.classDateString}
+            {processedClass.classDateString()}
           </time>
           <time className="text-sm block">
-            {processedClass.classTimeString}
+            {processedClass.classTimeString()}
           </time>
         </div>
-        {content}
+        {/* TODO: MAKE SURE I GET SANITIZED FIRST */}
+        <div dangerouslySetInnerHTML={{ __html: processedClass.content }} />
       </main>
     </>
   );
