@@ -1,0 +1,13 @@
+<section>
+
+    {% if contacts.contacts %}
+      <ul>
+        {% for item in contacts.contacts %}
+        <li>
+          <a href="{{item.url}}">{{item.title}}</a>
+        {% endfor %}
+        </li>
+      </ul>
+    {% endif %}
+
+</section>

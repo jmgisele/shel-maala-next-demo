@@ -9,6 +9,7 @@ import {
   ProccessedClass,
   tab,
 } from "@/lib/classes_utils";
+import Navbar from "@/ui/navbar";
 
 interface Settings {
   name: string;
@@ -45,6 +46,11 @@ export default function Page() {
     "settings.yaml"
   ) as unknown as Settings;
 
+  let navData = getYAML(
+    "./content/_data/",
+    "navigation.yaml"
+  ) as unknown as any;
+
   return (
     <>
       <div className="relative">
@@ -56,6 +62,7 @@ export default function Page() {
           src={settingsData.homeImage}
         />
       </div>
+      <Navbar navigation={navData} />
       {/* {% include "partials/navbar.html" %} */}
 
       <main
