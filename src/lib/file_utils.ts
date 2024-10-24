@@ -7,7 +7,7 @@ import { readdir } from "node:fs/promises";
 import { remark } from "remark";
 import html from "remark-html";
 import { ClassDataDef, ParsedClass } from "./classes_utils";
-import { RecordingDataDef } from "../models/recordings";
+import { RecordingData, RecordingDataDef } from "../models/recordings";
 
 export async function getstrToMd(str: string) {
   const processedContent = await remark().use(html).process(str);
@@ -37,7 +37,7 @@ export async function getClassFileData(
 
 export async function getRecordingFileData(
   id: string
-): Promise<RecordingDataDef> {
+): Promise<RecordingData> {
   const fullPath = path.join("./content/recordings", `${id}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
 

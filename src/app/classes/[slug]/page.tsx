@@ -5,6 +5,9 @@ import {
 import { getMdFileNames, getClassFileData } from "@/lib/file_utils";
 import Navbar from "@/ui/navbar";
 
+// todo: generate metadata
+
+
 export function generateStaticParams() {
   const posts: string[] = getMdFileNames("./content/classes");
   return posts.map((post) => ({

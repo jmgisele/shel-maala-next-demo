@@ -4,7 +4,7 @@ export interface RecordingDataDef {
   shortDescription: string;
 }
 
-export interface RecordingDataDef {
+export interface RecordingData {
   title: string;
   id: string;
   shortDescription: string;

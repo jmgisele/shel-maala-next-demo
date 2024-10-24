@@ -5,6 +5,7 @@ import { getYAML } from "@/lib/file_utils";
 import { Settings } from "src/models/settings";
 import { bellefair, lato } from "@/styles/fonts";
 import "../styles/global.css";
+import Footer from "@/ui/footer";
 
 // TODO: override meta tags for local routes!!
 export async function generateMetadata(): Promise<Metadata> {
@@ -36,7 +37,7 @@ export default async function RootLayout({
         className={`${lato.variable} ${bellefair.variable} relative bg-eggshell lg:text-xl min-h-screen flex-col flex`}
       >
         {children}
-        {/*  TODO: FOOTER GOES HERE */}
+        <Footer />
       </body>
     </html>
   );
