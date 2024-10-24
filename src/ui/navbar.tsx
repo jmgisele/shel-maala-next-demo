@@ -8,6 +8,7 @@ export default function Navbar({ navigation }: NavbarProps) {
   let [showNavMenu, setShowNavMenu] = useState(false);
 
   const toggleNav = () => {
+    // todo: make my animation work again
     setShowNavMenu(!showNavMenu);
   }
 
