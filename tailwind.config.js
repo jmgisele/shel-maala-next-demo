@@ -7,8 +7,8 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      sans: ['Lato', 'sans-serif'],
-      serif: ['Bellefair', 'serif'],
+      sans: ['var(--font-lato)'],
+      serif: ['var(--font-bellefair)'],
     },
     container: {
       center: true,
@@ -34,7 +34,7 @@ module.exports = {
           css: {
             "h1, h2, h3, h4, h5, h6": {
               "fontWeight": "unset",
-              "fontFamily": "Bellefair, serif"
+              "fontFamily": "var(--font-bellefair)"
             },
             "h1": {
               "fontSize": "2.25rem",

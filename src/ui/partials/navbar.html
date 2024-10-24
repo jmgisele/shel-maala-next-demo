@@ -1,4 +1,4 @@
-<nav class="w-full sticky top-0 h-8 z-50 top-0 bg-black text-eggshell font-serif text-lg lg:text-2xl" x-data="{ showNavMenu: false }" @click.away='showNavMenu = false'>
+<nav class="w-full sticky h-8 z-50 top-0 bg-black text-eggshell font-serif text-lg lg:text-2xl" x-data="{ showNavMenu: false }" @click.away='showNavMenu = false'>
   {% if navigation.items %}
       <ul class="list-reset bg-black overflow-hidden transition-all duration-700 lg:duration-0 flex-col flex content-center lg:static lg:max-h-override lg:flex-row lg:justify-end" 
         x-ref="navMenuList" :style="showNavMenu ? 'max-height: ' + $refs['navMenuList'].scrollHeight + 'px' : 'max-height: 0'"

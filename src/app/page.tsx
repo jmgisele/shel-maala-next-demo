@@ -10,17 +10,8 @@ import {
   tab,
 } from "@/lib/classes_utils";
 import Navbar from "@/ui/navbar";
+import { Settings } from "src/models/settings";
 
-interface Settings {
-  name: string;
-  byline: string;
-  url: string;
-  donateString: string;
-  homeImage: string;
-  aboutSummary: string;
-  aboutText: string;
-  [key: string]: any;
-}
 export default function Page() {
   let fileNames = getMdLinks("./content/classes");
 
@@ -63,8 +54,6 @@ export default function Page() {
         />
       </div>
       <Navbar navigation={navData} />
-      {/* {% include "partials/navbar.html" %} */}
-
       <main
         id="content-top"
         className="bg-eggshell
@@ -91,13 +80,13 @@ export default function Page() {
               .filter((c) => ["current", "upcoming"].includes(c.tab))
               .sort((a, b) => a.startDate.getTime() - b.startDate.getTime())
               .slice(0, 2)
-              .map((c) => (
-                <>
-                  <li key={c.slug}>
+              .map((c, index) => (
+                <React.Fragment key={index}>
+                  <li key={index}>
                     <Link href={`/classes/${c.slug}`}>{c.title}</Link>
                   </li>
                   <ClassItem classDataJson={c} />
-                </>
+                </React.Fragment>
               ))}
           </ul>
           <p className="text-right font-serif text-xl m-3">
@@ -108,7 +97,7 @@ export default function Page() {
           <h2 className="w-full font-serif mb-2 text-left text-2xl lg:text-4xl">
             About Us
           </h2>
-          <p>{ settingsData.aboutSummary }</p>
+          <p>{settingsData.aboutSummary}</p>
           <p className="text-right font-serif text-xl m-3">
             <a href="/about">Read more...</a>
           </p>

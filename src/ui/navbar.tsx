@@ -1,44 +1,35 @@
-'use client';
+"use client";
 
 import { OutsideAlerter } from "@/lib/ui_utils";
-import { useEffect, useRef, useState } from "react";
-
-interface NavbarProps {
-  navigation: {
-    items: any;
-  };
-}
+import { useState } from "react";
+import { NavbarProps } from "src/models/navbar";
 
 export default function Navbar({ navigation }: NavbarProps) {
   let [showNavMenu, setShowNavMenu] = useState(false);
 
-  const [height, setHeight] = useState(0);
-  const ref = useRef(null);
-
-  useEffect(() => {
-    setHeight(ref.current.scrollHeight);
-  });
+  const toggleNav = () => {
+    setShowNavMenu(!showNavMenu);
+  }
 
   return (
     <>
       <OutsideAlerter
         callback={() => {
-          setShowNavMenu(!showNavMenu);
+          setShowNavMenu(false);
         }}
       >
         <nav
           className="w-full sticky h-8 z-50 top-0 bg-black text-eggshell font-serif text-lg lg:text-2xl"
-          x-data={!showNavMenu}
+          x-data={(!showNavMenu).toString()}
         >
           <ul
             className="list-reset bg-black overflow-hidden transition-all duration-700 lg:duration-0 flex-col flex content-center lg:static lg:max-h-override lg:flex-row lg:justify-end"
             x-ref="navMenuList"
-            ref={ref}
             style={{
-              maxHeight: showNavMenu ? height : "0",
+              maxHeight:  showNavMenu? 'fit-content' : 0
             }}
           >
-            {navigation.items.map((item: any) => {
+            {navigation.items.map((item: any, index) => {
               let url = item.url;
               if (item.text == "Home" || item.text == "Membership") {
                 url += "#content-top";
@@ -47,9 +38,9 @@ export default function Navbar({ navigation }: NavbarProps) {
 
               return (
                 <li
-                  className="mx-2 lg:first:ml-0 lg:last:mr-0"
+                  key={index}
                   onClick={() => setShowNavMenu(!showNavMenu)}
-                  key={item.url}
+                  className="mx-2 lg:first:ml-0 lg:last:mr-0"
                 >
                   <a
                     className="text-center block lg:inline-block no-underline py-2 px-2 lg:hover:text-ecru"

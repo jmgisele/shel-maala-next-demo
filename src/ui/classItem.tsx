@@ -1,7 +1,6 @@
 "use client";
 
-import { ProccessedClass } from "@/lib/classes_utils";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import clsx from "clsx";
 
 interface ClassItemProps {
@@ -10,13 +9,7 @@ interface ClassItemProps {
 
 export default function ClassItem({ classDataJson }: ClassItemProps) {
   const classData = JSON.parse(JSON.stringify(classDataJson));
-  const [height, setHeight] = useState(0);
   let [showDescription, setShowDescription] = useState(false);
-  const ref = useRef(null);
-
-  useEffect(() => {
-    setHeight(ref.current.scrollHeight);
-  });
 
   return (
     <>
@@ -61,9 +54,8 @@ export default function ClassItem({ classDataJson }: ClassItemProps) {
           </div>
           <div
             className="overflow-hidden transition-all duration-700 lg:max-h-override"
-            ref={ref}
             style={{
-              maxHeight: showDescription ? height + "px" : "0",
+              maxHeight: showDescription ? "fit-content" : "0",
             }}
           >
             <p>{classData.description}</p>

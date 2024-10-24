@@ -1,0 +1,15 @@
+---
+layout: "default"
+prism: "true"
+---
+
+{% from 'macros/classListItem.html' import classDateTime %}
+
+<main class="container bg-eggshell p-5 prose lg:prose-xl">
+  <img src="{{ featuredImage }}" />
+  <header class="my-3 border-b-2 border-red">
+    <h1 class="font-serif my-2 lg:my-4 text-4xl lg:text-6xl">{{ title }}</h1>
+  </header>
+  {{ classDateTime(classDateString, classTimeString, tab, classRegistrationLink) }}
+  {{ content | safe }}
+</main>

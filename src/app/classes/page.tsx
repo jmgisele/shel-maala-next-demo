@@ -1,6 +1,7 @@
 import React from "react";
 import { getMdLinks, getMarkup } from "@/lib/file_utils";
 import Link from "next/link";
+import Head from "next/head";
 
 interface ClassInfo {
   slug: string;
@@ -21,6 +22,11 @@ export default function Page() {
 
   return (
    <>
+   <Head>    
+        {/* todo: make me dynamic */}
+    <meta property="og:title" content="Classes" />
+    <meta property="title" content="Classes" />
+   </Head>
     <h1>Here are all the classes:</h1>
     <ul>
       {classes.map(c => (
