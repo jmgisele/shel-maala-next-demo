@@ -18,7 +18,7 @@ export default async function Page() {
 
   let baseClasses: FullClassInfo[] = await Promise.all(
     fileNames.map(async (fileName) => {
-      let post = await getClassFileData("./content/classes", fileName);
+      let post = await getClassFileData(fileName);
       return { parsed: post, data: new ClassData(post) };
     })
   );
@@ -27,7 +27,7 @@ export default async function Page() {
     (a, b) =>
       new Date(b.data.startDate).getTime() -
       new Date(a.data.startDate).getTime()
-  )
+  );
 
   let tab = (tab: string) => {
     let mapped = {
