@@ -7,17 +7,17 @@ import { readdir } from "node:fs/promises";
 import { remark } from "remark";
 import html from "remark-html";
 import { ClassDataDef, ParsedClass } from "./classes_utils";
+import { RecordingDataDef } from "../models/recordings";
 
 export async function getstrToMd(str: string) {
   const processedContent = await remark().use(html).process(str);
   return processedContent.toString();
 }
 
-export async function getPostData(
-  dir: string,
+export async function getClassFileData(
   id: string
 ): Promise<ParsedClass> {
-  const fullPath = path.join(dir, `${id}.md`);
+  const fullPath = path.join("./content/classes", `${id}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
 
   const matterResult = matter(fileContents);
@@ -31,6 +31,26 @@ export async function getPostData(
     content: contentHtml,
     ...frontmatter,
     slug: "/classes/" + id,
+  };
+}
+
+
+export async function getRecordingFileData(
+  id: string
+): Promise<RecordingDataDef> {
+  const fullPath = path.join("./content/recordings", `${id}.md`);
+  const fileContents = fs.readFileSync(fullPath, "utf8");
+
+  const matterResult = matter(fileContents);
+
+  let frontmatter = matterResult.data as RecordingDataDef;
+
+  const contentHtml = await getstrToMd(matterResult.content);
+
+  return {
+    content: contentHtml,
+    ...frontmatter,
+    slug: "/recordings/" + id,
   };
 }
 

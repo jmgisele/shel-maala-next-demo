@@ -3,7 +3,7 @@ import {
   getMdFileNames,
   getMarkup,
   getYAML,
-  getPostData,
+  getClassFileData,
   getstrToMd,
 } from "@/lib/file_utils";
 import Link from "next/link";
@@ -20,7 +20,7 @@ export default async function Page() {
 
   let classes: FullClassInfo[] = await Promise.all(
     fileNames.map(async (fileName) => {
-      let post = await getPostData("./content/classes", fileName);
+      let post = await getClassFileData( fileName);
       return { parsed: post, data: new ClassData(post) };
     })
   );

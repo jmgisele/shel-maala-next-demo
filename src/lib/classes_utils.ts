@@ -15,15 +15,6 @@ export interface ClassDataDef {
   [key: string]: any;
 }
 
-export interface ProccessedClass extends ClassDataDef {
-  classDateString: string;
-  classTimeString: string;
-  tab: Tab;
-  slug: string;
-  file: string;
-  content: string;
-}
-
 export interface ParsedClass extends ClassDataDef {
   file: string,
   content: string,

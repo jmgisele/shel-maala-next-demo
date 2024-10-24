@@ -1,5 +1,5 @@
 import React from "react";
-import { getMdFileNames, getMarkup, getPostData } from "@/lib/file_utils";
+import { getMdFileNames, getMarkup, getClassFileData } from "@/lib/file_utils";
 import Link from "next/link";
 import { Metadata } from "next";
 import { ClassData, FullClassInfo, ParsedClass } from "@/lib/classes_utils";
@@ -18,7 +18,7 @@ export default async function Page() {
 
   let baseClasses: FullClassInfo[] = await Promise.all(
     fileNames.map(async (fileName) => {
-      let post = await getPostData("./content/classes", fileName);
+      let post = await getClassFileData("./content/classes", fileName);
       return { parsed: post, data: new ClassData(post) };
     })
   );

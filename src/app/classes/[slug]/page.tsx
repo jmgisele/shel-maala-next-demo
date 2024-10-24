@@ -2,7 +2,7 @@ import {
   ClassData,
   ParsedClass,
 } from "@/lib/classes_utils";
-import { getMdFileNames, getPostData } from "@/lib/file_utils";
+import { getMdFileNames, getClassFileData } from "@/lib/file_utils";
 import Navbar from "@/ui/navbar";
 
 export function generateStaticParams() {
@@ -19,7 +19,7 @@ export default async function Page({
 }) {
   const slug = (await params).slug;
 
-  const postData: ParsedClass = await getPostData("./content/classes", slug);
+  const postData: ParsedClass = await getClassFileData(slug);
 
   let processedClass = new ClassData(postData);
 
