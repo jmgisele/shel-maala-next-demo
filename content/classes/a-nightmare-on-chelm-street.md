@@ -21,9 +21,9 @@ Participants are encouraged to keep a sefer chalomot (dream journal) during the 
 
 When we recover our ancestral knowledge of these magical Talmudic practices, we get to open exciting gateways to ancient texts and try out imaginative lenses for understanding and healing the world in unconventional ways.”
 
-only req. is knowing your alef bet. contact xava&binya if u wanna take the class and need help getting ur alef bet! If you have never learned in the SVARA method before, you NEED to attend our crash course on 6/30, which can be found here: <https://fb.me/e/XX9YTM4x>
+only req. is knowing your alef bet. contact xava&binya if u wanna take the class and need help getting ur alef bet! If you have never learned in the SVARA method before, you NEED to attend our crash course on 6/30, which can be found [here:](https://fb.me/e/XX9YTM4x)
 
-Apply for A Nightmare on Chelm Street here: [https://docs.google.com/.../1FAIpQLSf8wfhpIi3.../viewform...](https://docs.google.com/forms/d/e/1FAIpQLSf8wfhpIi3jkOLMbKtXGetkEYdKILELjtVs64MEEmTbCKlH6Q/viewform?usp=sf_link&fbclid=IwAR1wT7GAwzNceEUOb7aSwZ3f1mPCiNm2_XiSDlGU-udMxMILR1J7_MZee_o)
+Apply for A Nightmare on Chelm Street [here:](https://docs.google.com/forms/d/e/1FAIpQLSf8wfhpIi3jkOLMbKtXGetkEYdKILELjtVs64MEEmTbCKlH6Q/viewform?usp=sf_link&fbclid=IwAR1wT7GAwzNceEUOb7aSwZ3f1mPCiNm2_XiSDlGU-udMxMILR1J7_MZee_o)
 
 \~\~\~\~
 

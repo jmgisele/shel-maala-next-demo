@@ -28,6 +28,8 @@ export default async function Page({
 
   // todo: make me safe!! i should not be allowed to execute code, sanitize me somehow
   // todo: i may not need this library??? may be simpler way using native jsx functionality
+  // todo: i can't parse links without a [](). either fix that or make sure ppl know that
+  // also < and > as in <3 lol
   const { content, frontmatter } = await compileMDX<ClassData>({
     source: c,
     options: { parseFrontmatter: true },

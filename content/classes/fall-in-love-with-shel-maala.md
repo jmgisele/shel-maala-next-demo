@@ -11,8 +11,8 @@ weekdays:
 ---
 T﻿ake a look at our cornucopia of cozy fall study opportunities!
 
-* The Sheydy Bunch:  OUR NEXT BIG TALMUD CLASS <https://www.shelmaala.com/classes/the-sheydy-bunch/>﻿
-* Compiling the Next Trans Codex: MID-WEEK SHIURIM WITH THE TRANS HALAKHA PROJECT <https://www.shelmaala.com/classes/compiling-the-next-trans-codex/> ﻿
-* Shel Maala Comes to Portland: FIRST IN-PERSON OFFERING <https://www.shelmaala.com/classes/shel-maala-comes-to-portland/>
+* The Sheydy Bunch:  [OUR NEXT BIG TALMUD CLASS](<https://www.shelmaala.com/classes/the-sheydy-bunch/>)
+* Compiling the Next Trans Codex: [MID-WEEK SHIURIM WITH THE TRANS HALAKHA PROJECT](<https://www.shelmaala.com/classes/compiling-the-next-trans-codex/>)
+* Shel Maala Comes to Portland: [FIRST IN-PERSON OFFERING](<https://www.shelmaala.com/classes/shel-maala-comes-to-portland/>)
 
-  * I﻿ncluding our Divine Decay FULL DAY OF LEARNING <https://www.shelmaala.com/classes/divine-decay/>
+  * Including our Divine Decay [FULL DAY OF LEARNING](<https://www.shelmaala.com/classes/divine-decay/>)
