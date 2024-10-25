@@ -13,6 +13,7 @@ import { Settings } from "src/models/settings";
 import { Contacts } from "src/models/contact";
 import { Membership } from "src/models/membership";
 import { Donation } from "src/models/donation";
+import ImageHeader from "@/ui/imageHeader";
 
 export default async function Page() {
   let fileNames = getMdFileNames("./content/classes");
@@ -38,15 +39,7 @@ export default async function Page() {
 
   return (
     <>
-      <div className="relative">
-        <div className="absolute top-0 right-2 lg:top-4 lg:right-6 text-white">
-          בס״ד
-        </div>
-        <img
-          className="flex-grow object-cover h-full w-full"
-          src={settingsData.homeImage}
-        />
-      </div>
+      <ImageHeader src={settingsData.homeImage} />
       <Navbar />
       <main
         id="content-top"

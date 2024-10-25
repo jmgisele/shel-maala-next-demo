@@ -10,7 +10,7 @@ import Footer from "@/ui/footer";
 // TODO: override meta tags for local routes!!
 // TODO: replace image tags and a tags with Link tags where necessary
 
-export async function generateMetadata(): Promise<Metadata> {
+export function generateMetadata(): Metadata {
   let settings = getYAML(
     "./content/_data/",
     "settings.yaml"
@@ -27,7 +27,7 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;

@@ -4,6 +4,7 @@ import { Metadata } from "next";
 import { ClassData } from "@/lib/classes_utils";
 import Navbar from "@/ui/navbar";
 import ClassItem from "@/ui/classItem";
+import LargeHeaderWrapper from "@/ui/largeHeaderWrapper";
 
 export const metadata: Metadata = {
   title: "Class Schedule",
@@ -23,9 +24,7 @@ export default async function Page() {
   );
 
   let classes = baseClasses.sort(
-    (a, b) =>
-      new Date(b.startDate).getTime() -
-      new Date(a.startDate).getTime()
+    (a, b) => new Date(b.startDate).getTime() - new Date(a.startDate).getTime()
   );
 
   let tab = (tab: string) => {
@@ -34,7 +33,7 @@ export default async function Page() {
       upcoming: classes.filter((c: ClassData) => c.tab == "upcoming"),
       current: classes.filter((c: ClassData) => c.tab == "current"),
     };
-    console.log(tab);
+
     return (
       <div className="p-2 my-2">
         <h2 className="text-2xl lg:text-4xl lg:mb-2 font-serif w-full text-left">
@@ -56,21 +55,9 @@ export default async function Page() {
   return (
     <>
       <Navbar />
-      <main
-        className="
-    bg-eggshell
-    p-5
-    container
-    max-w-6xl
-    flex flex-col
-    flex-grow
-  "
-      >
-        <header className="mb-3 border-b-2 border-red">
-          <h1 className="font-serif text-4xl lg:text-8xl">Class Schedule</h1>
-        </header>
+      <LargeHeaderWrapper title={"Class Schedule"}>
         {["upcoming", "current", "past"].map((t) => tab(t))}
-      </main>
+      </LargeHeaderWrapper>
     </>
   );
 }

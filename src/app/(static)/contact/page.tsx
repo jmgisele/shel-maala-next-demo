@@ -1,8 +1,8 @@
 import React from "react";
 import { Metadata } from "next";
 import { getYAML } from "@/lib/file_utils";
-import Navbar from "@/ui/navbar";
 import { Contacts } from "src/models/contact";
+import StaticHeader from "@/ui/staticHeader";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -19,19 +19,14 @@ export default async function Page() {
 
   return (
     <>
-      <Navbar />
-      <main className="container bg-eggshell p-5 flex-grow prose lg:prose-xl">
-        <header className="border-b-2 border-red">
-          <h1>Contact</h1>
-        </header>
-        <ul>
-          {contacts.contacts.map((link) => (
-            <li>
-              <a href={link.url}>{link.title}</a>
-            </li>
-          ))}
-        </ul>
-      </main>
+      <StaticHeader title={"Contact"} />
+      <ul>
+        {contacts.contacts.map((link, i) => (
+          <li key={i}>
+            <a href={link.url}>{link.title}</a>
+          </li>
+        ))}
+      </ul>
     </>
   );
 }

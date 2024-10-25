@@ -1,8 +1,8 @@
 import React from "react";
 import { Metadata } from "next";
 import { getstrToMd, getYAML } from "@/lib/file_utils";
-import Navbar from "@/ui/navbar";
 import { Donation } from "src/models/donation";
+import StaticHeader from "@/ui/staticHeader";
 
 export const metadata: Metadata = {
   title: "Donate",
@@ -20,17 +20,12 @@ export default async function Page() {
 
   return (
     <>
-      <Navbar />
-      <main className="container bg-eggshell p-5 flex-grow prose lg:prose-xl">
-        <header className="border-b-2 border-red">
-          <h1>Donate</h1>
-        </header>
-        {/* TODO: sanitize me! */}
-        <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
-        <p className="font-serif text-xl lg:text-2xl">
-          <a href={donation.url}>{donation.linkText}</a>
-        </p>
-      </main>
+      <StaticHeader title={"Donate"} />
+      {/* TODO: sanitize me! */}
+      <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
+      <p className="font-serif text-xl lg:text-2xl">
+        <a href={donation.url}>{donation.linkText}</a>
+      </p>
     </>
   );
 }
