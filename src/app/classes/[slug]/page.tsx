@@ -1,6 +1,5 @@
 import {
   ClassData,
-  ParsedClass,
 } from "@/lib/classes_utils";
 import { getMdFileNames, getClassFileData } from "@/lib/file_utils";
 import Navbar from "@/ui/navbar";
@@ -22,36 +21,34 @@ export default async function Page({
 }) {
   const slug = (await params).slug;
 
-  const postData: ParsedClass = await getClassFileData(slug);
-
-  let processedClass = new ClassData(postData);
+  const postData: ClassData = await getClassFileData(slug);
 
   return (
     <>
       <Navbar />
       <main className="container bg-eggshell p-5 prose lg:prose-xl">
-        <img src={processedClass.featuredImage} />
+        <img src={postData.featuredImage} />
         <header className="my-3 border-b-2 border-red">
           <h1 className="font-serif my-2 lg:my-4 text-4xl lg:text-6xl">
-            {processedClass.title}
+            {postData.title}
           </h1>
         </header>
         <div className="flex flex-col lg:flex-row justify-between">
-          {processedClass.classRegistrationLink &&
-            processedClass.tab() != "past" && (
+          {postData.classRegistrationLink &&
+            postData.tab != "past" && (
               <div className="text-sm text-red border-black lg:pr-1 lg:border-r lg:mr-1">
-                <a href={processedClass.classRegistrationLink}>Register</a>
+                <a href={postData.classRegistrationLink}>Register</a>
               </div>
             )}
           <time className="text-sm flex-grow block">
-            {processedClass.classDateString()}
+            {postData.classDateString}
           </time>
           <time className="text-sm block">
-            {processedClass.classTimeString()}
+            {postData.classTimeString}
           </time>
         </div>
         {/* TODO: MAKE SURE I GET SANITIZED FIRST */}
-        <div dangerouslySetInnerHTML={{ __html: processedClass.content }} />
+        <div dangerouslySetInnerHTML={{ __html: postData.content }} />
       </main>
     </>
   );

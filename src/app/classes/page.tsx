@@ -1,7 +1,7 @@
 import React from "react";
 import { getMdFileNames, getClassFileData } from "@/lib/file_utils";
 import { Metadata } from "next";
-import { ClassData, FullClassInfo } from "@/lib/classes_utils";
+import { ClassData } from "@/lib/classes_utils";
 import Navbar from "@/ui/navbar";
 import ClassItem from "@/ui/classItem";
 
@@ -15,26 +15,24 @@ export const metadata: Metadata = {
 export default async function Page() {
   let fileNames = getMdFileNames("./content/classes");
 
-  let baseClasses: FullClassInfo[] = await Promise.all(
+  let baseClasses: ClassData[] = await Promise.all(
     fileNames.map(async (fileName) => {
       let post = await getClassFileData(fileName);
-      return { parsed: post, data: new ClassData(post) };
+      return post;
     })
   );
 
   let classes = baseClasses.sort(
     (a, b) =>
-      new Date(b.data.startDate).getTime() -
-      new Date(a.data.startDate).getTime()
+      new Date(b.startDate).getTime() -
+      new Date(a.startDate).getTime()
   );
 
   let tab = (tab: string) => {
     let mapped = {
-      past: classes.filter((c: FullClassInfo) => c.data.tab() == "past"),
-      upcoming: classes.filter(
-        (c: FullClassInfo) => c.data.tab() == "upcoming"
-      ),
-      current: classes.filter((c: FullClassInfo) => c.data.tab() == "current"),
+      past: classes.filter((c: ClassData) => c.tab == "past"),
+      upcoming: classes.filter((c: ClassData) => c.tab == "upcoming"),
+      current: classes.filter((c: ClassData) => c.tab == "current"),
     };
     console.log(tab);
     return (
@@ -46,8 +44,8 @@ export default async function Page() {
           <p className="italic">No {tab} classes at the moment</p>
         ) : (
           <ul className="flex flex-col">
-            {mapped[tab].map((c: FullClassInfo) => (
-              <ClassItem parsedClassData={c.parsed} />
+            {mapped[tab].map((c: ClassData) => (
+              <ClassItem classData={c} />
             ))}
           </ul>
         )}

@@ -1,11 +1,10 @@
-// from https://medium.com/@karl-thomas/favorite-open-source-cms-for-next-js-da452f1789a7
 import fs from "fs";
 import yaml from "js-yaml";
 import path from "path";
 import matter from "gray-matter";
 import { remark } from "remark";
 import html from "remark-html";
-import { ClassDataDef, ParsedClass } from "./classes_utils";
+import { ClassData, ClassDataDef, classDateString, classTimeString, tab } from "./classes_utils";
 import { RecordingData, RecordingDataDef } from "../models/recordings";
 
 export async function getstrToMd(str: string) {
@@ -15,7 +14,7 @@ export async function getstrToMd(str: string) {
 
 export async function getClassFileData(
   id: string
-): Promise<ParsedClass> {
+): Promise<ClassData> {
   const fullPath = path.join("./content/classes", `${id}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
 
@@ -25,11 +24,15 @@ export async function getClassFileData(
 
   const contentHtml = await getstrToMd(matterResult.content);
 
+
   return {
     file: `${id}.md`,
     content: contentHtml,
     ...frontmatter,
     slug: "/classes/" + id,
+    classDateString: classDateString(frontmatter),
+    classTimeString: classTimeString(frontmatter),
+    tab: tab(frontmatter)
   };
 }
 
@@ -125,7 +128,7 @@ export const getMdFileNames = (directory: string): string[] => {
 //   }
 // };
 
-// export const getMarkup = ( // todo: i shouldn't be needed
+// export const getMarkup = ( 
 //   directory: string,
 //   filename: string
 // ): matter.GrayMatterFile<string> | null => {

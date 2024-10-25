@@ -2,16 +2,15 @@
 
 import { useState } from "react";
 import clsx from "clsx";
-import { ClassData, ParsedClass } from "@/lib/classes_utils";
+import { ClassData } from "@/lib/classes_utils";
 
 interface ClassItemProps {
-  parsedClassData: ParsedClass;
+  classData: ClassData;
 }
 
-export default function ClassItem({ parsedClassData }: ClassItemProps) {
+export default function ClassItem({ classData }: ClassItemProps) {
   let [showDescription, setShowDescription] = useState(false);
 
-  let classData = new ClassData(parsedClassData);
   // todo: make my anims work again
   return (
     <>
@@ -81,15 +80,15 @@ export default function ClassItem({ parsedClassData }: ClassItemProps) {
             </button>
           </div>
           <div className="flex flex-col lg:flex-row justify-between">
-            {classData.classRegistrationLink && classData.tab() !== "past" && (
+            {classData.classRegistrationLink && classData.tab !== "past" && (
               <div className="text-sm text-red border-black lg:pr-1 lg:border-r lg:mr-1">
                 <a href={classData.classRegistrationLink}>Register</a>
               </div>
             )}
             <time className="text-sm flex-grow block">
-              {classData.classDateString()}
+              {classData.classDateString}
             </time>
-            <time className="text-sm block">{classData.classTimeString()}</time>
+            <time className="text-sm block">{classData.classTimeString}</time>
           </div>
           <div
             className={clsx(

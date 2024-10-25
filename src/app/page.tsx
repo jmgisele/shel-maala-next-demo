@@ -7,7 +7,7 @@ import {
 } from "@/lib/file_utils";
 import Link from "next/link";
 import ClassItem from "@/ui/classItem";
-import { ClassData, FullClassInfo } from "@/lib/classes_utils";
+import { ClassData } from "@/lib/classes_utils";
 import Navbar from "@/ui/navbar";
 import { Settings } from "src/models/settings";
 import { Contacts } from "src/models/contact";
@@ -17,10 +17,10 @@ import { Donation } from "src/models/donation";
 export default async function Page() {
   let fileNames = getMdFileNames("./content/classes");
 
-  let classes: FullClassInfo[] = await Promise.all(
+  let classes: ClassData[] = await Promise.all(
     fileNames.map(async (fileName) => {
-      let post = await getClassFileData( fileName);
-      return { parsed: post, data: new ClassData(post) };
+      let post = await getClassFileData(fileName);
+      return post;
     })
   );
 
@@ -71,19 +71,19 @@ export default async function Page() {
           </h2>
           <ul className="flex flex-col">
             {classes
-              .filter((c) => ["current", "upcoming"].includes(c.data.tab()))
+              .filter((c: ClassData) => ["current", "upcoming"].includes(c.tab))
               .sort(
                 (a, b) =>
-                  new Date(b.data.startDate).getTime() -
-                  new Date(a.data.startDate).getTime()
+                  new Date(b.startDate).getTime() -
+                  new Date(a.startDate).getTime()
               )
               .slice(0, 2)
               .map((c, index) => (
                 <React.Fragment key={index}>
                   <li key={index}>
-                    <Link href={`/classes/${c.data.slug}`}>{c.data.title}</Link>
+                    <Link href={`/classes/${c.slug}`}>{c.title}</Link>
                   </li>
-                  <ClassItem parsedClassData={c.parsed} />
+                  <ClassItem classData={c} />
                 </React.Fragment>
               ))}
           </ul>

@@ -9,9 +9,7 @@ import Footer from "@/ui/footer";
 
 // TODO: override meta tags for local routes!!
 // TODO: replace image tags and a tags with Link tags where necessary
-// TODO: make sure that if someone adds an attrib in the decap cms admin
-// to a yaml OR a md file 
-// it does not crash. the whole app.
+
 export async function generateMetadata(): Promise<Metadata> {
   let settings = getYAML(
     "./content/_data/",
